@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bajarse al moro · Madrid, años 80</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asfalto:#15121f; --noche:#221c35; --rosa:#ff2e88; --cian:#19e3e0; --sol:#ffd23f; --papel:#f5ecd9; --tinta:#2a2233;
+  --disp:'Bowlby One',Impact,sans-serif; --body:'Rubik',Arial,sans-serif; --mono:'Courier Prime','Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--asfalto);color:var(--papel);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font:400 clamp(30px,5vw,52px)/1 var(--disp);color:var(--sol);text-shadow:3px 3px 0 var(--rosa);margin-bottom:10px}
+.sub{font-family:var(--mono);color:var(--cian);margin-bottom:34px;max-width:60ch}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(21,18,31,.94);border-bottom:3px solid var(--rosa);backdrop-filter:blur(6px)}
+nav .wrap{display:flex;gap:6px;align-items:center;overflow-x:auto;height:58px;scrollbar-width:none}
+nav b{font:400 18px var(--disp);color:var(--rosa);margin-right:14px;white-space:nowrap}
+nav a{font:700 14px var(--mono);text-decoration:none;padding:6px 12px;border:2px solid transparent;white-space:nowrap}
+nav a:hover{border-color:var(--cian);color:var(--cian)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 0;background:linear-gradient(180deg,#2b1247 0%,#7a1a6b 48%,#ff5f6d 78%,var(--sol) 100%)}
+.sun{position:absolute;left:50%;bottom:70px;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:linear-gradient(180deg,var(--sol),var(--rosa));
+  -webkit-mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 28px);mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 28px);opacity:.9}
+.hero .wrap{position:relative;text-align:center}
+.tag{display:inline-block;font:700 14px var(--mono);background:var(--asfalto);color:var(--cian);padding:6px 14px;border:2px solid var(--cian);transform:rotate(-2deg)}
+.hero h1{font:400 clamp(54px,13vw,140px)/.88 var(--disp);color:var(--papel);margin:22px 0 14px;text-shadow:4px 4px 0 var(--rosa),8px 8px 0 var(--asfalto);letter-spacing:-1px}
+.hero h1 span{display:block;color:var(--sol)}
+.hero p.lema{font:italic 700 clamp(17px,2.4vw,24px) var(--mono);color:var(--papel);text-shadow:2px 2px 0 var(--asfalto);max-width:34ch;margin:0 auto 26px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.btn{font:700 16px var(--mono);text-decoration:none;padding:12px 22px;background:var(--rosa);color:#fff;border:3px solid var(--asfalto);box-shadow:5px 5px 0 var(--asfalto);transition:transform .12s}
+.btn.alt{background:var(--cian);color:var(--asfalto)}
+.btn:hover{transform:translate(-2px,-2px)}
+.skyline{position:relative;display:block;width:100%;height:110px;margin-top:0;color:var(--asfalto)}
+
+/* Ticker */
+.ticker{background:var(--sol);color:var(--asfalto);font:700 15px var(--mono);border-block:3px solid var(--asfalto);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:9px 0;animation:mar 28s linear infinite}
+.ticker span{margin:0 26px}
+@keyframes mar{to{transform:translateX(-50%)}}
+
+/* Huecos de texto */
+.hueco{border:2px dashed var(--cian);background:rgba(25,227,224,.06);padding:16px 18px;color:#bff8f6;font-family:var(--mono);font-size:15px}
+.hueco::before{content:attr(data-tipo);display:block;font-weight:700;color:var(--sol);font-size:12px;margin-bottom:6px}
+
+/* Sinopsis */
+.sinopsis{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.cinta{background:var(--papel);color:var(--tinta);padding:22px;border:4px solid var(--rosa);box-shadow:8px 8px 0 var(--cian)}
+.cinta h3{font:400 22px var(--disp);color:var(--rosa);margin-bottom:8px}
+.cinta p{font-family:var(--mono);font-size:16px}
+.cinta .hueco{background:rgba(255,46,136,.06);border-color:var(--rosa);color:#7a2050}
+.cinta .hueco::before{color:var(--rosa)}
+.dropcap::first-letter{font:400 60px/.8 var(--disp);float:left;color:var(--rosa);padding:6px 8px 0 0}
+
+/* Ficha */
+.ficha{background:var(--noche)}
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.dato{border:3px solid var(--cian);padding:16px;background:var(--asfalto);position:relative}
+.dato small{display:block;font:700 12px var(--mono);color:var(--rosa)}
+.dato strong{display:block;font:400 22px/1.15 var(--disp);color:var(--papel);margin-top:4px}
+.dato:nth-child(even){border-color:var(--rosa)}
+.dato:nth-child(even) small{color:var(--cian)}
+
+/* Personajes */
+.reparto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.carta{background:var(--noche);border:3px solid var(--papel);box-shadow:6px 6px 0 var(--rosa);display:flex;flex-direction:column}
+.carta:nth-child(2n){box-shadow:6px 6px 0 var(--cian)}
+.foto{aspect-ratio:4/3;display:grid;place-items:center;background:repeating-linear-gradient(135deg,#2b2340 0 14px,#332a4d 14px 28px);border-bottom:3px solid var(--papel);font:700 13px var(--mono);color:var(--cian);text-align:center;padding:10px}
+.carta .cuerpo{padding:16px}
+.carta h3{font:400 24px var(--disp);color:var(--sol)}
+.carta .rol{font:italic 14px var(--mono);color:var(--cian);margin-bottom:10px}
+
+/* Temas: acordeón */
+.temas{background:var(--noche)}
+details{border:3px solid var(--rosa);background:var(--asfalto);margin-bottom:12px}
+details:nth-child(even){border-color:var(--cian)}
+summary{cursor:pointer;font:400 20px var(--disp);padding:14px 18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--sol);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details .in{padding:0 18px 18px}
+
+/* Cronología */
+.linea{position:relative;margin-left:8px;border-left:4px solid var(--rosa);padding-left:28px}
+.hito{position:relative;margin-bottom:26px}
+.hito::before{content:"";position:absolute;left:-40px;top:6px;width:20px;height:20px;background:var(--sol);border:4px solid var(--asfalto);box-shadow:0 0 0 3px var(--cian);transform:rotate(45deg)}
+.hito b{font:400 26px var(--disp);color:var(--sol)}
+.hito p{font-family:var(--mono);margin-top:4px}
+
+/* Cita */
+.cita{background:var(--rosa);color:#fff;text-align:center;padding:60px 0}
+.cita blockquote{font:400 clamp(24px,4.2vw,44px)/1.15 var(--disp);text-shadow:3px 3px 0 var(--asfalto);max-width:22ch;margin:0 auto 14px}
+.cita cite{font:700 16px var(--mono);background:var(--asfalto);padding:5px 12px}
+
+/* Galería */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+.galeria .foto{border:3px solid var(--papel);aspect-ratio:auto;height:100%}
+.galeria .g1{grid-column:span 2;grid-row:span 2}
+.galeria .g4{grid-column:span 2}
+
+/* Dos columnas + recursos */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.lista{list-style:none}
+.lista li{padding:12px 0 12px 34px;border-bottom:2px dotted var(--cian);position:relative;font-family:var(--mono)}
+.lista li::before{content:"▶";position:absolute;left:0;color:var(--rosa)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:700 14px var(--mono);padding:6px 14px;border:2px solid var(--sol);color:var(--sol);border-radius:99px}
+
+footer{background:#0d0b14;border-top:4px solid var(--cian);padding:40px 0;text-align:center;font-family:var(--mono);color:#9aa}
+footer b{display:block;font:400 26px var(--disp);color:var(--rosa);margin-bottom:8px}
+
+@media(max-width:800px){
+  .sinopsis,.cols{grid-template-columns:1fr}
+  .galeria{grid-template-columns:1fr 1fr}
+  .galeria .g1{grid-column:span 2}
+  .sun{width:240px;height:240px;margin-left:-120px}
+  section{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Principal">
+  <div class="wrap">
+    <b>MORO '85</b>
+    <a href="#sinopsis">Sinopsis</a><a href="#ficha">Ficha</a><a href="#reparto">Reparto</a><a href="#temas">Temas</a><a href="#epoca">Época</a><a href="#galeria">Galería</a><a href="#recursos">Recursos</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="tag">COMEDIA · MADRID · AÑOS 80</span>
+    <h1>Bajarse <span>al moro</span></h1>
+    <p class="lema">[Escribe aquí el lema o una frase que resuma la obra]</p>
+    <div class="btns">
+      <a class="btn" href="#sinopsis">Empezar</a>
+      <a class="btn alt" href="#reparto">Conocer al reparto</a>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 110V70h50V40h40v30h30V55h60v20h40V25h30v50h50V60h70v15h40V35h50v40h60V50h50v25h40V20h34v55h50V65h60v10h50V45h40v30h60V55h50v20h40V30h40v45h60V60h40v50z"/>
+  </svg>
+</header>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>★ BAJARSE AL MORO</span><span>★ MADRID 1985</span><span>★ LA MOVIDA</span><span>★ [AUTOR/A]</span><span>★ TRAPICHEO Y SUEÑOS</span><span>★ BAJARSE AL MORO</span><span>★ MADRID 1985</span><span>★ LA MOVIDA</span><span>★ [AUTOR/A]</span><span>★ TRAPICHEO Y SUEÑOS</span>
+  <span>★ BAJARSE AL MORO</span><span>★ MADRID 1985</span><span>★ LA MOVIDA</span><span>★ [AUTOR/A]</span><span>★ TRAPICHEO Y SUEÑOS</span><span>★ BAJARSE AL MORO</span><span>★ MADRID 1985</span><span>★ LA MOVIDA</span><span>★ [AUTOR/A]</span><span>★ TRAPICHEO Y SUEÑOS</span>
+</div></div>
+
+<main>
+
+<section id="sinopsis">
+  <div class="wrap">
+    <h2>Sinopsis</h2>
+    <p class="sub">La historia en menos de un minuto.</p>
+    <div class="sinopsis">
+      <div class="cinta">
+        <h3>El argumento</h3>
+        <p class="dropcap">[Escribe aquí el primer párrafo de la sinopsis: dónde, cuándo y quiénes protagonizan la historia.]</p>
+        <br>
+        <p>[Segundo párrafo: el conflicto principal y cómo se complica.]</p>
+        <br>
+        <div class="hueco" data-tipo="ESPACIO PARA TEXTO CORTO">[Desenlace o pregunta abierta, sin destripar el final]</div>
+      </div>
+      <div>
+        <div class="hueco" data-tipo="ESPACIO PARA RESUMEN EN 3 LÍNEAS">[Resumen exprés de la obra en tres líneas]</div>
+        <br>
+        <div class="hueco" data-tipo="ESPACIO PARA DATO CURIOSO">[Un dato curioso que enganche al lector]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ficha" class="ficha">
+  <div class="wrap">
+    <h2>Ficha técnica</h2>
+    <p class="sub">Los datos clave de un vistazo.</p>
+    <div class="datos">
+      <div class="dato"><small>AUTOR/A</small><strong>[Nombre]</strong></div>
+      <div class="dato"><small>ESTRENO</small><strong>[Año y lugar]</strong></div>
+      <div class="dato"><small>GÉNERO</small><strong>[Comedia / tragicomedia]</strong></div>
+      <div class="dato"><small>ESCENARIO</small><strong>[Espacio de la acción]</strong></div>
+      <div class="dato"><small>ÉPOCA</small><strong>[Años 80]</strong></div>
+      <div class="dato"><small>ADAPTACIÓN</small><strong>[Cine, TV…]</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="reparto">
+  <div class="wrap">
+    <h2>El reparto</h2>
+    <p class="sub">Personajes, tal cual son.</p>
+    <div class="reparto">
+      <article class="carta"><div class="foto">[FOTO O ILUSTRACIÓN<br>del personaje]</div><div class="cuerpo"><h3>[Personaje 1]</h3><div class="rol">[Rol / oficio / edad]</div><div class="hueco" data-tipo="DESCRIPCIÓN">[Quién es y qué quiere]</div></div></article>
+      <article class="carta"><div class="foto">[FOTO O ILUSTRACIÓN<br>del personaje]</div><div class="cuerpo"><h3>[Personaje 2]</h3><div class="rol">[Rol / oficio / edad]</div><div class="hueco" data-tipo="DESCRIPCIÓN">[Quién es y qué quiere]</div></div></article>
+      <article class="carta"><div class="foto">[FOTO O ILUSTRACIÓN<br>del personaje]</div><div class="cuerpo"><h3>[Personaje 3]</h3><div class="rol">[Rol / oficio / edad]</div><div class="hueco" data-tipo="DESCRIPCIÓN">[Quién es y qué quiere]</div></div></article>
+      <article class="carta"><div class="foto">[FOTO O ILUSTRACIÓN<br>del personaje]</div><div class="cuerpo"><h3>[Personaje 4]</h3><div class="rol">[Rol / oficio / edad]</div><div class="hueco" data-tipo="DESCRIPCIÓN">[Quién es y qué quiere]</div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cita" aria-label="Cita destacada">
+  <div class="wrap">
+    <blockquote>“[Cita memorable de la obra]”</blockquote>
+    <cite>[Personaje · Acto o escena]</cite>
+  </div>
+</section>
+
+<section id="temas" class="temas">
+  <div class="wrap">
+    <h2>Temas</h2>
+    <p class="sub">Toca cada tema para abrirlo.</p>
+    <details open><summary>[Tema 1: p. ej. la marginalidad]</summary><div class="in"><div class="hueco" data-tipo="PÁRRAFO EXPLICATIVO">[Explica el tema y cita una escena que lo muestre.]</div></div></details>
+    <details><summary>[Tema 2: p. ej. la amistad]</summary><div class="in"><div class="hueco" data-tipo="PÁRRAFO EXPLICATIVO">[Explica el tema y cita una escena que lo muestre.]</div></div></details>
+    <details><summary>[Tema 3: p. ej. el lenguaje coloquial]</summary><div class="in"><div class="hueco" data-tipo="PÁRRAFO EXPLICATIVO">[Explica el tema y cita una escena que lo muestre.]</div></div></details>
+    <div class="chips" style="margin-top:22px"><span class="chip">#[etiqueta]</span><span class="chip">#[etiqueta]</span><span class="chip">#[etiqueta]</span><span class="chip">#[etiqueta]</span></div>
+  </div>
+</section>
+
+<section id="epoca">
+  <div class="wrap">
+    <h2>Los años 80</h2>
+    <p class="sub">El Madrid que respira detrás de la obra.</p>
+    <div class="cols">
+      <div class="linea">
+        <div class="hito"><b>[Año]</b><p>[Hecho histórico o cultural]</p></div>
+        <div class="hito"><b>[Año]</b><p>[Hecho histórico o cultural]</p></div>
+        <div class="hito"><b>[Año]</b><p>[Hecho histórico o cultural]</p></div>
+        <div class="hito"><b>[Año]</b><p>[Hecho histórico o cultural]</p></div>
+      </div>
+      <div>
+        <div class="hueco" data-tipo="TEXTO LARGO · CONTEXTO">[Cuenta cómo era la vida en el Madrid de los 80: la movida, el paro, la calle, la música.]</div>
+        <br>
+        <div class="hueco" data-tipo="LISTA · MODA, MÚSICA Y OBJETOS">[Vaqueros de pitillo · walkman · cassette · discotecas · …]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="ficha">
+  <div class="wrap">
+    <h2>Galería</h2>
+    <p class="sub">Carteles, escenas y objetos de la época.</p>
+    <div class="galeria">
+      <div class="foto g1">[IMAGEN PRINCIPAL<br>cartel o escena]</div>
+      <div class="foto">[IMAGEN]</div>
+      <div class="foto">[IMAGEN]</div>
+      <div class="foto g4">[IMAGEN PANORÁMICA]</div>
+    </div>
+    <br>
+    <div class="hueco" data-tipo="PIE DE FOTO / CRÉDITOS">[Fuente y descripción de las imágenes]</div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="wrap">
+    <h2>Recursos</h2>
+    <p class="sub">Para seguir explorando.</p>
+    <div class="cols">
+      <ul class="lista">
+        <li>[Texto de la obra: enlace]</li>
+        <li>[Adaptación cinematográfica: enlace]</li>
+        <li>[Entrevista o artículo: enlace]</li>
+        <li>[Banda sonora de la época: enlace]</li>
+      </ul>
+      <div>
+        <div class="hueco" data-tipo="ACTIVIDAD / PREGUNTAS PARA DEBATIR">[1. Pregunta abierta · 2. Pregunta abierta · 3. Pregunta abierta]</div>
+        <br>
+        <div class="hueco" data-tipo="AUTORÍA DEL PROYECTO">[Nombres, curso y centro]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <b>FIN DE LA CINTA</b>
+  [Tu nombre / grupo] · Proyecto sobre "Bajarse al moro" · [Año]
+</footer>
+
+</body>
+</html>
